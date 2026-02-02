@@ -1,16 +1,16 @@
 **React2Shell (CVE-2025-55182)**
 
-> 우리FISA 기술세미나 - 3팀 React Server Component(RSC)의 설계 결함을 이용한 원격 코드 실행(RCE) 취약점, React2Shell 분석 및 연구입니다.
+> 우리FISA 기술세미나 6기 - 3팀 React Server Component(RSC)의 설계 결함을 이용한 원격 코드 실행(RCE) 취약점, React2Shell 분석 및 연구
 > 
 
 **Team**
 
 | **Member** | **Role** | **GitHub** |
 | --- | --- | --- |
-| **남인서** | 🛡️ Vulnerability Analysis & Research | [@](https://github.com/sene03)sene03 |
-| **유승준** | 🛡️ Vulnerability Analysis & Research | [@](https://github.com/fluanceifi)fluanceifi |
-| **이수현** | 🛡️ Vulnerability Analysis & Research | [@](https://github.com/hyun7931)hyun7931 |
-| **김유정** | 🛡️ Vulnerability Analysis & Research | [@](https://github.com/yujung23)yujung23 |
+| **남인서** | 자료조사, PPT제작, 발표 | [@sene03](https://github.com/sene03) |
+| **유승준** | 자료조사, PPT제작, 발표 | [@fluanceifi](https://github.com/fluanceifi) |
+| **이수현** | 자료조사, PPT제작 | [@hyun793](https://github.com/hyun7931) |
+| **김유정** | 자료조사, PPT제작 | [@yujung23](https://github.com/yujung23) |
 
 ---
 
