@@ -1,9 +1,3 @@
-업로드해주신 발표 자료(PDF)의 목차(Contents) 흐름에 맞춰 `README.md`를 재구성했습니다.
-
-발표 흐름인 **[개요 - 공격 메커니즘 - 영향 - 프론트엔드 보안 책임]** 순서로 내용을 전개하여, 세미나의 스토리라인이 그대로 드러나도록 작성했습니다.
-
----
-
 # React2Shell (CVE-2025-55182)
 
 > **우리FISA 기술세미나 - 3팀**
@@ -11,9 +5,12 @@
 
 ## 👥 Team
 
-| 남인서 | 유승준 | 이수현 | 김유정 |
-| --- | --- | --- | --- |
-| Analysis | Research | Research | Presentation |
+| Member | Role | GitHub |
+| :--- | :--- | :--- |
+| **남인서** | 🛡️ Vulnerability Analysis & Research | [@user](https://github.com/sene03) |
+| **유승준** | 🛡️ Vulnerability Analysis & Research | [@user](https://github.com/fluanceifi) |
+| **이수현** | 🛡️ Vulnerability Analysis & Research | [@user](https://github.com/hyun7931) |
+| **김유정** | 🛡️ Vulnerability Analysis & Research | [@user](https://github.com/yujung23) |
 
 ---
 
