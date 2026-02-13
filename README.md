@@ -4,6 +4,7 @@
 > 
 
 # Team
+![우승사진](https://github.com/user-attachments/assets/01ba5a87-29be-4c23-a556-a27bc41615f4)
 
 | **Member** | **Role** | **GitHub** |
 | --- | --- | --- |
